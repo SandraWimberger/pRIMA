@@ -6,8 +6,12 @@ csv file parser that takes a csv file as input and converts it to a x by y list 
 """
 import csv
 def csv_parser(filename):
-    global reader
+    data = []
     with open(filename, newline='', encoding='utf-8') as file:
-         reader = csv.reader(file, delimiter=',')
-        #for row in reader:
-         #   print(row)
+        dialect = csv.Sniffer().sniff(file.read()) #checks for which delimiter is used
+        file.seek(0)
+        reader = csv.reader(file, dialect) #reader argument
+        next(reader) #skip header
+        for row in reader:
+            data.append(row)
+    return data
