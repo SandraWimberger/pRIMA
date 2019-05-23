@@ -11,4 +11,4 @@ from csv_parser import csv_parser
 test_data = csv_parser('test_dataset.csv')
 
 print(type(test_data),len(test_data))
-print(test_data[0][])
+print(type(test_data[0][0]))
