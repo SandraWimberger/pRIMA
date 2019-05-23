@@ -2,13 +2,11 @@
 #Author: Carl Möller
 #
 """
-Calls a csv parser that imports the csv file and returns it as a list of lists.
-
+Takes a deletion larger then 2bp and left aligns it
 
 """
-from csv_parser import csv_parser
 
-test_data = csv_parser('test_dataset.csv')
+def left_align(data):
+    for i in range(0,len(data)):
+        if data[i][1] == "deletion":
 
-print(type(test_data),len(test_data))
-print(type(test_data[0][0]))
