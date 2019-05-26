@@ -12,8 +12,6 @@ from csv_parser import csv_parser
 
 test_data = csv_parser('test_dataset.csv')
 
-print(test_data[2][3])
-
 from micro_homology import micro_homo
 
 deletions_count = micro_homo(test_data)
