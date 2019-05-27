@@ -9,7 +9,7 @@ Read inputs!
 import pandas as pd #Load the Pandas libraries with alias 'pd' 
 data = pd.read_csv("test_dataset.csv") # Read data from file 'filename.csv'
 refseq="TGCCTGCATTTTAGTCGTGAGATGGAGAATAAAGAAACTCTCAAAGGGTTGCACAAGATGGATGATCGTCCAGAGGAACGAATGATCAGGGAGAAACTGAAGGCAACCTGTATGCCAGCCTGGAAGCACGAATGGTTGGAAAGGAGAAATAGGCGAGGGCCTGTGGTAAGTGGCTATGGG"
-sgrna="AGCCTGGAAGCACGAATGGT"
+sgrna="ATTTCTCCTTTCCAACCATT"
 num_visualized_var=10 #Define number of variants to be visualized!
 
 """
@@ -29,11 +29,10 @@ refseq_rc=reverse_complement(refseq)
 #Check if the sgRNA sequence exist in the refseq, and determine the cut_site:
 if refseq.find(sgrna)>0:
     orientation="Fwd"
-    cut_site=refseq.find(sgrna)
+    cut_site=refseq.find(sgrna)+len(sgrna)-3
 elif refseq_rc.find(sgrna):
     orientation="Rev"
     cut_site=len(refseq)-(refseq_rc.find(sgrna)+len(sgrna)-3)
-    print(cut_site)
 else:
     print("sgRNA doesn't exist in RefSeq!")
     exit()
@@ -42,7 +41,7 @@ if len(sgrna)<10 or len(sgrna)>30:
     print("sgRNA length is not in range!")
     exit()
 
-
+print(cut_site)
 
 """
 Setting up the global variables and functions!
@@ -159,11 +158,10 @@ for i in range(num_visualized_var):
     var_len=data.loc[i,'Length']
     #Convert reference positions:
     var_pos=data.loc[i,'Reference Position']
-    var_pos= var_pos-(cut_site-35) -17
+    var_pos= var_pos-(cut_site-35)
     if var_pos<0:
         var_len=var_len+var_pos
         var_pos=0
-        
     allele=data.loc[i,'Allele']
     mh_len=data.loc[i,'MicroHomology']
     duplication=data.loc[i,'Duplication']
@@ -248,7 +246,7 @@ def top_guide(sgrna,orientation):
         rect(width,height,pos_x,pos_y,border_color,fill_color)
         #sgRNA text:remember that sgRNA needs to be revComp
         t.color(shape_fill["sgrna_text"])
-        t.write(sgrna, move=False, align="left", font=("Courier New", 14, "bold"))
+        t.write(reverse_complement(sgrna), move=False, align="left", font=("Courier New", 14, "bold"))
         #draw vertical lines
         line_color=shape_fill["sgrna_border"]
         vertical_line(pos_x,pos_y,line_size,line_color)
