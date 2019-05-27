@@ -2,7 +2,7 @@
 #Author: Carl Möller
 #
 """
-Checks if a deletion is because a micro homology and exports a list with true or false
+Checks if a deletion is has a micro homology and exports a list with the length of the homology
 """
 
 
@@ -13,7 +13,7 @@ def micro_homo(data, refseq):
     #         for fasta in fasta_sequences:
     #             name, sequence = fasta.id, str(fasta.seq)
     #     with open(output_file) as out_file:
-
+    micro_homology = []
     with open(refseq) as ref_seq_READ: #open reference sequence
         ref_seq=ref_seq_READ.read()
         print(ref_seq)
@@ -23,8 +23,15 @@ def micro_homo(data, refseq):
     else:
         raise ValueError("File does not contain the correct headers")
     for i in range(0,len(data)):
-        if data[i][1] == "Deletion" or data[i][1] == "deletion":
-            print(data[i][3])
-            print(ref_seq[int(data[i][0])+int(data[i][2])-1])
-            #while ref_seq[int(data[i][0])+int(data[i][2])-1] == ref_seq[]
+        if data[i][data[0].index('Type')] == "Deletion" or data[i][data[0].index('Type')] == "deletion":
+            #make note that the refrence position starts with 1
+            count=0 #homology length counter
+            for char in data[i][data[0].index('Reference')]:
+                n=data[i][data[0].index('Reference')].index(char) #tickr to move along the sequence
+                if char == ref_seq[int(data[i][data[0].index('Reference Position')])+int(data[i][data[0].index('Length')])-1+n]:
+                    count += 1
+                else:
+                    break
+            micro_homology.append(count)
+    return micro_homology
 
