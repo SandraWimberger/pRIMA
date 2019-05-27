@@ -22,18 +22,21 @@ refseq_len=70 #defines the length of each bar!
 bar_height=21 #defines the height of each bar!
 base_len=10 #defines the base length, for calculating the length of rectangles!
 between_bars=5 #defines the distance between two bars!
-fig_start=[20,500]#difines a position of the origin. Every drawing will be relative to this coordinates!
 
 #Let's start the turtle and define the frame of the image.
+frame_width=800
+frame_height=600
 t=turtle.Turtle()
 t.screen.reset()
-t.screen.setworldcoordinates(0,0,800,600)
+t.screen.setworldcoordinates(0,0,frame_width,frame_height)
 t.speed(0)
 t.pensize(5)
-t.goto(0,600)
-t.goto(800,600)
-t.goto(800,0)
+t.goto(0,frame_height)
+t.goto(frame_width,frame_height)
+t.goto(frame_width,0)
 t.goto(0,0)
+
+fig_start=[20,frame_height-100]#difines a position of the origin. Every drawing will be relative to this coordinates!
 
 #move the pointer to the fig_start (origin).
 t.penup()
@@ -92,6 +95,10 @@ def pointer_origin(var_num):
     t.pendown()
     pass
 
+#Function to draw the guide on top!
+def top_guide(sgrna,orientation):
+    pass
+    
 """
 Initiate drawing!
 """
@@ -120,7 +127,6 @@ for i in range(10):
         #draw the white background
         height=bar_height
         rect(width,height,pos_x,pos_y,"white","white")
-        pointer_origin(i)
         #draw the black line
         height=int(bar_height//3)
         pos_y= fig_start[1] - i*(bar_height+between_bars)+(bar_height*0.333)
@@ -155,19 +161,18 @@ for i in range(10):
     else:
         pass
     
+    t.penup()
+    pos_x= fig_start[0]+refseq_len*base_len+10
+    pos_y= fig_start[1] - i*(bar_height+between_bars)
+    t.goto(pos_x,pos_y)
+    t.pendown()
+    text="%05.2f"%float(rel_freq)+"%"
+    t.write(text, move=False, align="left", font=("Arial", 14, "bold"))
+    
 #move the pointer to the fig_start (origin).
 t.penup()
 t.goto(fig_start[0],fig_start[1])
 t.pendown()
-
-#Read the top10 variants, RefSeq, and sgRNA sequence:
-
-
-#Deletions with/without microhomology:
-
-
-#Insrtions/duplications:
-
 
 #Save the final image as .eps
 ts = t.getscreen()
