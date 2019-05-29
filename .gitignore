@@ -4,3 +4,4 @@
 *.xcuserstate
 *.plist
 *.xcscheme
+*.pyc
