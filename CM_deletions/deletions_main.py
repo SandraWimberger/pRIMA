@@ -7,7 +7,7 @@
 3. writes the new columns to a csv file and exports it
 """
 
-from csv_parser import csv_parser
+from csv_parser_panda import csv_parser_panda
 
 test_data = csv_parser('test_dataset.csv')
 
