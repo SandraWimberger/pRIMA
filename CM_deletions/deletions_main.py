@@ -11,7 +11,7 @@ from csv_parser_panda import csv_parser_panda
 
 test_data = csv_parser_panda("test_dataset.csv")
 
-print(test_data[0])
+print(test_data)
 # from micro_homology import micro_homo
 #
 # micro_homology = micro_homo(test_data, 'test_data_refseq')
