@@ -14,5 +14,5 @@ def csv_parser(filename):
         file.seek(0)
         reader = csv.reader(file, dialect) #reader argument
         for row in reader:
-            data.append(row)
+            data.append(row) #appends each row as a list to data
     return data
