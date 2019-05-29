@@ -9,7 +9,7 @@ Read inputs!
 import pandas as pd #Load the Pandas libraries with alias 'pd' 
 data = pd.read_csv("test_dataset.csv") # Read data from file 'filename.csv'
 refseq="TGCCTGCATTTTAGTCGTGAGATGGAGAATAAAGAAACTCTCAAAGGGTTGCACAAGATGGATGATCGTCCAGAGGAACGAATGATCAGGGAGAAACTGAAGGCAACCTGTATGCCAGCCTGGAAGCACGAATGGTTGGAAAGGAGAAATAGGCGAGGGCCTGTGGTAAGTGGCTATGGG"
-sgrna="ATTTCTCCTTTCCAACCATT"
+sgrna="AGCCTGGAAGCACGAATGGT"
 num_visualized_var=10 #Define number of variants to be visualized!
 
 """
@@ -294,4 +294,4 @@ ts.getcanvas().postscript(file="out_Top10_Variants.eps")
 
 #Close turtle!
 turtle.exitonclick()
-turtle.done()
+#turtle.done()
