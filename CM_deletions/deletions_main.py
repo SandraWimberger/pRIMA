@@ -9,15 +9,15 @@
 
 from csv_parser_panda import csv_parser_panda
 
-test_data = csv_parser('test_dataset.csv')
+test_data = csv_parser_panda("test_dataset.csv")
 
 print(test_data[0])
-from micro_homology import micro_homo
-
-micro_homology = micro_homo(test_data, 'test_data_refseq')
-
-print(micro_homology)
-
-from csv_writer import csv_writer
-
-test_data = csv_writer(micro_homology, 'test_data_MH.csv')
+# from micro_homology import micro_homo
+#
+# micro_homology = micro_homo(test_data, 'test_data_refseq')
+#
+# print(micro_homology)
+#
+# from csv_writer import csv_writer
+#
+# test_data = csv_writer(micro_homology, 'test_data_MH.csv')
