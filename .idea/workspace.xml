@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/CM_deletions/deletions_main.py" line="14" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75e83a6-443d-41d3-8432-305e3db66783" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CM_deletions/deletions_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/CM_deletions/deletions_main.py" afterDir="false" />
-    </list>
+    <list default="true" id="c75e83a6-443d-41d3-8432-305e3db66783" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,11 +108,6 @@
               <item name="pRIMA" type="b2602c69:ProjectViewProjectNode" />
               <item name="pRIMA" type="462c0819:PsiDirectoryNode" />
               <item name="ATG_Visualization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pRIMA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pRIMA" type="462c0819:PsiDirectoryNode" />
-              <item name="CM_deletions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pRIMA" type="b2602c69:ProjectViewProjectNode" />
@@ -366,7 +358,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289855" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289855" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
