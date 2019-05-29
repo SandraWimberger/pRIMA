@@ -41,7 +41,7 @@ if len(sgrna)<10 or len(sgrna)>30:
     print("sgRNA length is not in range!")
     exit()
 
-print(cut_site)
+#print(cut_site)
 
 """
 Setting up the global variables and functions!
@@ -293,5 +293,8 @@ ts.getcanvas().postscript(file="out_Top10_Variants.eps")
 #Save the final image as .pdf
 
 #Close turtle!
-turtle.exitonclick()
-turtle.done()
+#turtle.exitonclick()
+#turtle.done()
+
+print("turtle is done!")
+exit()
