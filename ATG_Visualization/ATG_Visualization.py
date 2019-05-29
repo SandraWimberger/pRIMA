@@ -294,4 +294,4 @@ ts.getcanvas().postscript(file="out_Top10_Variants.eps")
 
 #Close turtle!
 turtle.exitonclick()
-#turtle.done()
+turtle.done()
