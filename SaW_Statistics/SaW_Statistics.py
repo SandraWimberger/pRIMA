@@ -11,3 +11,10 @@ for i in range(10):
     print(row) 
  
 print (data)
+#Type in the number of mapped reads from your tsv file
+mapped_reads = 25000
+
+# Calculate number of mutated reads
+
+mutated_reads = data[['Count']].sum()
+print (mutated_reads)
