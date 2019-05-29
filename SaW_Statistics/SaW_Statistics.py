@@ -15,6 +15,14 @@ print (data)
 mapped_reads = 25000
 
 # Calculate number of mutated reads
-
 mutated_reads = data[['Count']].sum()
 print (mutated_reads)
+
+# Create a new column in the in data frame, calculating relative frequencies
+
+data['rel_freq'] = 100*data['Count']/mapped_reads
+print (data)
+
+# Calculating editing efficiency
+editing_efficiency = mutated_reads/mapped_reads
+print (editing_efficiency*100) + str(%) 
