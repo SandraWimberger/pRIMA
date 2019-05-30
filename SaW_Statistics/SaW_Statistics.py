@@ -26,3 +26,12 @@ print (data)
 # Calculating editing efficiency
 editing_efficiency = mutated_reads/mapped_reads
 print (editing_efficiency*100) + str(%) 
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig = plt.figure()  # an empty figure with no axes
+fig.suptitle('No axes on this figure')  # Add a title so we know which it is
+
+fig, ax_lst = plt.subplots(2, 2)  # a figure with a 2x2 grid of Axes
+print (fig)
