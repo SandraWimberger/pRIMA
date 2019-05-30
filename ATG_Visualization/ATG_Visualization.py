@@ -296,5 +296,5 @@ ts.getcanvas().postscript(file="out_Top10_Variants.eps")
 #turtle.exitonclick()
 #turtle.done()
 
-print("turtle is done!")
+#exit the python code will close the turtle window!
 exit()
