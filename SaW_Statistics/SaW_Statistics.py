@@ -12,7 +12,7 @@ for i in range(10):
  
 print (data)
 #Type in the number of mapped reads from your tsv file
-mapped_reads = 25000
+mapped_reads = 50000
 
 # Calculate number of mutated reads
 mutated_reads = data[['Count']].sum()
@@ -24,14 +24,25 @@ data['rel_freq'] = 100*data['Count']/mapped_reads
 print (data)
 
 # Calculating editing efficiency
-editing_efficiency = mutated_reads/mapped_reads
-print (editing_efficiency*100) + str(%) 
+editing_efficiency = mutated_reads/mapped_reads*100
+wt_reads = (100 - editing_efficiency)
+print (editing_efficiency) 
+print (wt_reads)
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-fig = plt.figure()  # an empty figure with no axes
-fig.suptitle('No axes on this figure')  # Add a title so we know which it is
+import matplotlib.pyplot as plt
+slices_hours = [float(wt_reads), float(editing_efficiency)]
+activities = ['wt_reads', 'mutated_reads']
+colors = ['r', 'g']
+plt.pie(slices_hours, labels=activities, colors=colors, startangle=90, autopct='%.1f%%')
+plt.show()
 
-fig, ax_lst = plt.subplots(2, 2)  # a figure with a 2x2 grid of Axes
-print (fig)
+
+
+
+
+
+
+
