@@ -42,11 +42,10 @@ plt.show()
 
 
 # Calculating number of reads with insertions
-insertions =  (np.where(data['Type']== 'Insertion', data['Count'],0).sum())
-
+insertions = sum(data[data['Type']== 'Insertion']['Count'])
 print (insertions)
 
 # Calculating number of reads with deletions
-deletions = (np.where(data['Type']== 'Deletion', data['Count'],0).sum())
+deletions = sum(data[data['Type']== 'Deletion']['Count'])
 
 print (deletions)
