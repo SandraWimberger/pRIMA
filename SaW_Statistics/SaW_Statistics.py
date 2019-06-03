@@ -33,10 +33,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 import matplotlib.pyplot as plt
-slices_hours = [float(wt_reads), float(editing_efficiency)]
+editing = [float(wt_reads), float(editing_efficiency)]
 activities = ['wt_reads', 'mutated_reads']
 colors = ['r', 'g']
-plt.pie(slices_hours, labels=activities, colors=colors, startangle=90, autopct='%.1f%%')
+plt.pie(editing, labels=activities, colors=colors, startangle=90, autopct='%.1f%%')
 plt.show()
 
 
