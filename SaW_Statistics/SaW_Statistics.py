@@ -29,6 +29,7 @@ wt_reads = (100 - editing_efficiency)
 print (editing_efficiency) 
 print (wt_reads)
 
+### Generating pie charts for editing efficiency
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -40,9 +41,12 @@ plt.pie(editing, labels=activities, colors=colors, startangle=90, autopct='%.1f%
 plt.show()
 
 
+# Calculating number of reads with insertions
+insertions =  (np.where(data['Type']== 'Insertion', data['Count'],0).sum())
 
+print (insertions)
 
+# Calculating number of reads with deletions
+deletions = (np.where(data['Type']== 'Deletion', data['Count'],0).sum())
 
-
-
-
+print (deletions)
