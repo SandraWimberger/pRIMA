@@ -43,9 +43,12 @@ plt.show()
 
 # Calculating number of reads with insertions
 insertions = sum(data[data['Type']== 'Insertion']['Count'])
-print (insertions)
+percent_insertions = insertions/mutated_reads*100
+
+print (percent_insertions)
 
 # Calculating number of reads with deletions
 deletions = sum(data[data['Type']== 'Deletion']['Count'])
+percent_deletions = deletions/mutated_reads*100
 
-print (deletions)
+print (percent_deletions)
