@@ -48,3 +48,9 @@ deletions = sum(data[data['Type']== 'Deletion']['Count'])
 percent_deletions = deletions/mutated_reads*100
 pie_deletions = plt.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
 plt.show()
+
+# Generating pdf with graphs
+from matplotlib.backends.backend_pdf import PdfPages
+pp = PdfPages('test.pdf')
+pp.savefig(pie_editing_efficiency, pie_insertions, pie_deletions)
+pp.close()
