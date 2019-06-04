@@ -17,6 +17,7 @@ This code uses the following packages:
 ## Output:
 The resulting visualized variants will be saved as _**.eps**_ format in the same directory. 
 
-### Author: Amir Taheri-Ghahfarokhi
+### Author: 
+Amir Taheri-Ghahfarokhi
 Email: Amir.Taheri-Ghahfarokhi@astrazeneca.com
 Linkedin: https://Linkedin.com/Ghahfarokhi
