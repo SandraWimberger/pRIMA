@@ -34,26 +34,29 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 import matplotlib.pyplot as plt
+plt.figure(1)
 pie_editing_efficiency = plt.pie([float(wt_reads), float(editing_efficiency)], labels=['wt_reads', 'mutated_reads'], colors=['darkred', 'r'], startangle=90, autopct='%.1f%%')
-plt.show()
+
 
 # Calculating number of reads with insertions
 insertions = sum(data[data['Type']== 'Insertion']['Count'])
 percent_insertions = insertions/mutated_reads*100
+plt.figure(2)
 pie_insertions = plt.pie([float(100 - percent_insertions), float(percent_insertions)], labels=['Others', 'Insertions'], colors=['b', 'c'], startangle=90, autopct='%.1f%%')
-plt.show()
+
 
 # Calculating number of reads with deletions
 deletions = sum(data[data['Type']== 'Deletion']['Count'])
 percent_deletions = deletions/mutated_reads*100
-pie_deletions = plt.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
+plt.figure(3)
+plt.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
 plt.show()
 
 # Generating pdf with graphs
 from matplotlib.backends.backend_pdf import PdfPages
 pp = PdfPages('test.pdf')
-pp.savefig(pie_editing_efficiency, dpi=None, facecolor='w', edgecolor='w',
-        orientation='portrait', papertype=None, format=None,
+pp.savefig(format('pie_insertions'), dpi=None, facecolor='w', edgecolor='w',
+        orientation='portrait', papertype=None, format='pdf',
         transparent=False, bbox_inches=None, pad_inches=0.1,
         frameon=None, metadata=None)
 pp.close()
