@@ -9,6 +9,9 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 ## Requirements:
 This code uses _**turtle**_ and _**tkinter**_ packages!
 
+## Output:
+The resulting visualized variants will be saved as _**.eps**_ format in the same directory. 
+
 ### Author: Amir Taheri-Ghahfarokhi
 Email: Amir.Taheri-Ghahfarokhi@astrazeneca.com
 Linkedin: https://Linkedin.com/Ghahfarokhi
