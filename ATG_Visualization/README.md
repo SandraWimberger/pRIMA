@@ -9,7 +9,9 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 ## Requirements:
 This code uses the following packages:
  > _**turtle**_ 
+
  > _**tkinter**_
+
  > _**pandas**_
 
 ## Output:
