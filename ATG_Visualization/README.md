@@ -20,8 +20,6 @@ This code uses the following packages:
  pandas
  ```
 
-# Options:
-The _turtle_ pointer on the screen while the drawing is done. I
 
 ## Output:
 The resulting visualized variants will be saved as _**.eps**_ format in the same directory. 
