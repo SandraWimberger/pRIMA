@@ -8,12 +8,16 @@
 4. writes the new columns to a csv file and exports it
 """
 
-from csv_parser import csv_parser
+from csv_csv.csv_parser import csv_parser
 
 test_data = csv_parser('test_dataset.csv')
 
-from micro_homology import micro_homo
+from CM_deletions.micro_homology import micro_homo
 
-deletions_count = micro_homo(test_data)
+deletions_count = micro_homo(test_data, 'test_data_refseq')
 
 print(deletions_count)
+
+from csv_csv.csv_writer import csv_writer
+
+test_data = csv_writer(deletions_count, 'test_data_MH.csv')

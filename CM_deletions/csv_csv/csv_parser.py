@@ -12,7 +12,6 @@ def csv_parser(filename):
         dialect = csv.Sniffer().sniff(file.read()) #checks for which delimiter and format is used
         file.seek(0)
         reader = csv.reader(file, dialect) #reader argument
-        next(reader) #skip header
         for row in reader:
             data.append(row)
     return data
