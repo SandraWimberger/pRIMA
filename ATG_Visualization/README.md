@@ -7,7 +7,12 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 3. Sequence of the **sgRNA**, without PAM.
 
 ## Requirements:
-This code uses _**turtle**_ and _**tkinter**_ packages!
+This code uses the following packages:
+ ```
+ turtle
+ tkinter
+ pandas
+ ```
 
 ## Output:
 The resulting visualized variants will be saved as _**.eps**_ format in the same directory. 
