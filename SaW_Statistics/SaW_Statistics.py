@@ -52,12 +52,11 @@ plt.figure(3)
 plt.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
 plt.title('Percent deletions from modified reads')
 plt.show()
+plt.safefig('test1.pdf')
 
 # Generating pdf with graphs
-from matplotlib.backends.backend_pdf import PdfPages
-pp = PdfPages('test.pdf')
-pp.savefig(format(1,2,3), dpi=None, facecolor='w', edgecolor='w',
-        orientation='portrait', papertype=None, format='pdf',
-        transparent=False, bbox_inches=None, pad_inches=0.1,
-        frameon=None, metadata=None)
-pp.close()
+def save_as_pdf(self):
+        from matplotlib.backends.backend_pdf import PdfPages
+        with PdfPages(os.path.join(self.path, self.name+str("test.pdf"))) as pdf:
+            pdf.savefig()
+            plt.close() 
