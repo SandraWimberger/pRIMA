@@ -29,7 +29,7 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 * Show/hide the drawing window on the screen.
 `show_window = True`
 * Colors for the different type of mutations:
-`
+```
 shape_fill={"match":"light gray",
             "match_border":"light gray",
             "deletion":"black",
@@ -47,7 +47,7 @@ shape_fill={"match":"light gray",
             "pam_border":"orange",
             "cut_line":"green"
             }
-            `
+```
 
 ## Requirements:
 This code uses the following packages:
