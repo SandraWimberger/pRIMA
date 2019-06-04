@@ -3,6 +3,7 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 
 ## Inputs:
 1. Table of variant in **.csv** format.
+
 |	Reference Position	|	Type	|	Length	|	Reference	|	Allele	|	Count	|	MicroHomology	|	Duplication	|	Rel. Freq.	|
 |	------------------- 	|	----------	|	-------	|	-----------------	|	------	|	-----	|	-------------	|	-----------	|	----------	|
 |	133	|	Insertion	|	1	|	-	|	T	|	6594	|		|	Detected	|	35.48213517	|
