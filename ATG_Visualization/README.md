@@ -1,5 +1,5 @@
-# Author: Amir Taheri-Ghahfarokhi.
-This code visualizes a variant table resulted from mutations induced by CRISPR-Cas9 system.
+# Visualizing Cas9 induced mutation patterns.
+Deep sequencing of CRISPR targeted loci provides a robust assay to measure and quantify the Cas9 cutting efficiency and study the induced mutation patterns. This code visualizes a variant table resulted from mutations detected in deep sequencing data.
 
 ## Inputs:
 1. Table of variant in *.csv* format.
@@ -8,3 +8,6 @@ This code visualizes a variant table resulted from mutations induced by CRISPR-C
 
 ## Requirements:
 This code uses _*turtle*_ and _*tkinter*_ packages!
+
+# Author: Amir Taheri-Ghahfarokhi
+## Email: Amir.Taheri-Ghahfarokhi@astrazeneca.com
