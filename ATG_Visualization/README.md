@@ -1,5 +1,5 @@
 # Visualizing Cas9 induced mutation patterns.
-Deep sequencing of CRISPR targeted loci provides a robust assay to measure and quantify the Cas9 cutting efficiency and study the induced mutation patterns. This code visualizes a variant table resulted from mutations detected in deep sequencing data.
+Deep sequencing of CRISPR targeted loci provides a robust assay to quantify the Cas9 cutting efficiency and study the induced mutation patterns. This code visualizes a variant table resulted from mutations detected in deep sequencing data.
 
 ## Inputs:
 1. Table of variant in **.csv** format.
