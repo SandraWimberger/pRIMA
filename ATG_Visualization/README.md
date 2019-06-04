@@ -24,6 +24,8 @@ This code uses the following packages:
 ## Output:
 The resulting visualized variants will be saved as _**.eps**_ format in the same directory. 
 
+![Image of Yaktocat](https://photos.app.goo.gl/JHmKTErXbQniyNKc8)
+
 ### Author: 
 Amir Taheri-Ghahfarokhi
 
