@@ -19,13 +19,35 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 |	118	|	Deletion	|	16	|	GCCTGGAAGCACGAAT	|	-	|	375	|	0	|		|	2.01786483	|
 
 2. Sequence of the **RefSeq**, which has been used to map the reads.
+`refseq="TGCCTGCATTTTAGTCGTGAGATGGAGAATAAAGAAACTCTCAAAGGGTTGCACAAGATGGATGATCGTCCAGAGGAACGAATGATCAGGGAGAAACTGAAGGCAACCTGTATGCCAGCCTGGAAGCACGAATGGTTGGAAAGGAGAAATAGGCGAGGGCCTGTGGTAAGTGGCTATGGG"`
 3. Sequence of the **sgRNA**, without PAM.
+`sgrna="AGCCTGGAAGCACGAATGGT"`
 
 ### Optional inputs:
 * Number of variants to visualize. This is by default is 10 variant.
 `num_visualized_var = 10`
 * Show/hide the drawing window on the screen.
 `show_window = True`
+* Colors for the different type of mutations:
+`
+shape_fill={"match":"light gray",
+            "match_border":"light gray",
+            "deletion":"black",
+            "deletion_border":"black",
+            "insertion":"red",
+            "insertion_border":"black",
+            "duplication":"yellow",
+            "duplication_border":"black",
+            "microhomology":"cyan",
+            "microhomology_border":"black",
+            "sgrna_border":"gray",
+            "sgrna":"pink",
+            "sgrna_text":"black",
+            "pam":"yellow",
+            "pam_border":"orange",
+            "cut_line":"green"
+            }
+            `
 
 ## Requirements:
 This code uses the following packages:
