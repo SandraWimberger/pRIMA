@@ -63,7 +63,7 @@ This code uses the following packages:
 
 
 ## Output:
-The resulting visualized variants will be saved as _**.eps**_ format in the same directory. 
+The resulting visualized variants will be saved as _**.eps**_ format (readable using adobe illustrator) in the same directory that test data are.  
 
 ![Output screenshot](https://github.com/SandraWimberger/pRIMA/blob/master/ATG_Visualization/Output_Screen_Capture.JPG)
 
