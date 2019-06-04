@@ -21,9 +21,11 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 2. Sequence of the **RefSeq**, which has been used to map the reads.
 
 `refseq="TGCCTGCATTTTAGTCGTGAGATGGAGAATAAAGAAACTCTCAAAGGGTTGCACAAGATGGATGATCGTCCAGAGGAACGAATGATCAGGGAGAAACTGAAGGCAACCTGTATGCCAGCCTGGAAGCACGAATGGTTGGAAAGGAGAAATAGGCGAGGGCCTGTGGTAAGTGGCTATGGG"`
+
 3. Sequence of the **sgRNA**, without PAM.
 
 `sgrna="AGCCTGGAAGCACGAATGGT"`
+
 
 ### Optional inputs:
 * Number of variants to visualize. This is by default is 10 variant.
@@ -65,7 +67,8 @@ The resulting visualized variants will be saved as _**.eps**_ format in the same
 
 ![Output screenshot](https://github.com/SandraWimberger/pRIMA/blob/master/ATG_Visualization/Output_Screen_Capture.JPG)
 
-### Author: 
+
+## Author: 
 Amir Taheri-Ghahfarokhi
 
 Email: Amir.Taheri-Ghahfarokhi@astrazeneca.com
