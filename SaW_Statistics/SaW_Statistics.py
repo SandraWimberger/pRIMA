@@ -12,7 +12,7 @@ for i in range(10):
  
 print (data)
 #Type in the number of mapped reads from your tsv file
-mapped_reads = 25000
+mapped_reads = 50000
 
 # Calculate number of mutated reads
 mutated_reads = data[['Count']].sum()
@@ -24,5 +24,33 @@ data['rel_freq'] = 100*data['Count']/mapped_reads
 print (data)
 
 # Calculating editing efficiency
-editing_efficiency = mutated_reads/mapped_reads
-print (editing_efficiency*100) + str(%) 
+editing_efficiency = mutated_reads/mapped_reads*100
+wt_reads = (100 - editing_efficiency)
+print (editing_efficiency) 
+print (wt_reads)
+
+### Generating pie charts for editing efficiency
+import matplotlib.pyplot as plt
+import numpy as np
+
+import matplotlib.pyplot as plt
+pie_editing_efficiency = plt.pie([float(wt_reads), float(editing_efficiency)], labels=['wt_reads', 'mutated_reads'], colors=['darkred', 'r'], startangle=90, autopct='%.1f%%')
+plt.show()
+
+# Calculating number of reads with insertions
+insertions = sum(data[data['Type']== 'Insertion']['Count'])
+percent_insertions = insertions/mutated_reads*100
+pie_insertions = plt.pie([float(100 - percent_insertions), float(percent_insertions)], labels=['Others', 'Insertions'], colors=['b', 'c'], startangle=90, autopct='%.1f%%')
+plt.show()
+
+# Calculating number of reads with deletions
+deletions = sum(data[data['Type']== 'Deletion']['Count'])
+percent_deletions = deletions/mutated_reads*100
+pie_deletions = plt.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
+plt.show()
+
+# Generating pdf with graphs
+from matplotlib.backends.backend_pdf import PdfPages
+pp = PdfPages('test.pdf')
+pp.savefig(pie_editing_efficiency, pie_insertions, pie_deletions)
+pp.close()
