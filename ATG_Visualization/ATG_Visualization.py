@@ -12,7 +12,8 @@ Read inputs!
 data = pd.read_csv("test_dataset.csv") # Read data from file 'filename.csv'
 refseq="TGCCTGCATTTTAGTCGTGAGATGGAGAATAAAGAAACTCTCAAAGGGTTGCACAAGATGGATGATCGTCCAGAGGAACGAATGATCAGGGAGAAACTGAAGGCAACCTGTATGCCAGCCTGGAAGCACGAATGGTTGGAAAGGAGAAATAGGCGAGGGCCTGTGGTAAGTGGCTATGGG"
 sgrna="AGCCTGGAAGCACGAATGGT"
-num_visualized_var=10 #Define number of variants to be visualized!
+num_visualized_var = 10 #Define number of variants to be visualized!
+show_window = True
 
 """
 Check if inputs make sense!
@@ -59,7 +60,10 @@ canvas=tk.Canvas(master=window,width=frame_width,height=frame_height)
 canvas.pack() #Packs the canvas to the window.
 
 t=turtle.RawTurtle(canvas) 
-window.withdraw() #This hides the window to speed up the code.
+if show_window==False:
+    window.withdraw() #This hides the window to speed up the code.
+else:
+    pass
 t.pencolor('black')
 
 """
@@ -312,4 +316,7 @@ ts = t.getscreen()
 file_name="out_Top10_Variants.eps"
 ts.getcanvas().postscript(file=file_name)
 
-window.destroy()
+if show_window==False:
+    window.destroy()
+else:
+    window.mainloop()
