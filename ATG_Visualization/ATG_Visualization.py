@@ -4,7 +4,6 @@ Import required modules!
 import tkinter as tk #Load the tkinter module with alias 'tk' for graphic interface.
 import turtle #Load the turyle module for drawings.
 import pandas as pd #Load the Pandas libraries with alias 'pd' to read csv files.
-#import Image, ImageDraw
 
 """
 Read inputs!
