@@ -52,5 +52,8 @@ plt.show()
 # Generating pdf with graphs
 from matplotlib.backends.backend_pdf import PdfPages
 pp = PdfPages('test.pdf')
-pp.savefig(pie_editing_efficiency, pie_insertions, pie_deletions)
+pp.savefig(pie_editing_efficiency, dpi=None, facecolor='w', edgecolor='w',
+        orientation='portrait', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=0.1,
+        frameon=None, metadata=None)
 pp.close()
