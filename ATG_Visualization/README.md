@@ -28,7 +28,7 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to quantify the 
 
 
 ### Optional inputs:
-* Number of variants to visualize. This is by default is 10 variant.
+* Number of variants to visualize. By default this is the top 10 variants in the table (assuming that the input table is already sorted based on the disired column).
 `num_visualized_var = 10`
 * Show/hide the drawing window on the screen.
 `show_window = True`
