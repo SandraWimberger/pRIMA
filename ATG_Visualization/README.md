@@ -19,8 +19,10 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 |	118	|	Deletion	|	16	|	GCCTGGAAGCACGAAT	|	-	|	375	|	0	|		|	2.01786483	|
 
 2. Sequence of the **RefSeq**, which has been used to map the reads.
+
 `refseq="TGCCTGCATTTTAGTCGTGAGATGGAGAATAAAGAAACTCTCAAAGGGTTGCACAAGATGGATGATCGTCCAGAGGAACGAATGATCAGGGAGAAACTGAAGGCAACCTGTATGCCAGCCTGGAAGCACGAATGGTTGGAAAGGAGAAATAGGCGAGGGCCTGTGGTAAGTGGCTATGGG"`
 3. Sequence of the **sgRNA**, without PAM.
+
 `sgrna="AGCCTGGAAGCACGAATGGT"`
 
 ### Optional inputs:
