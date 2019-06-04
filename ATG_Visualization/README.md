@@ -8,11 +8,11 @@ Deep sequencing of CRISPR targeted loci provides a robust assay to measure and q
 
 ## Requirements:
 This code uses the following packages:
- > _**turtle**_ 
+ ` _**turtle**_´
 
- > _**tkinter**_
+ ` _**tkinter**_´
 
- > _**pandas**_
+ `_**pandas**_´
 
 ## Output:
 The resulting visualized variants will be saved as _**.eps**_ format in the same directory. 
