@@ -53,7 +53,7 @@ with PdfPages(r'C:\Users\kwcb136\Desktop\Charts.pdf') as export_pdf:
     plt.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
     plt.title('Percent deletions from modified reads')
     export_pdf.savefig(fig3)
-    
+    plt.show()
     plt.close()
     
     
