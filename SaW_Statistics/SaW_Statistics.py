@@ -33,26 +33,27 @@ print (wt_reads)
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 with PdfPages(r'C:\Users\kwcb136\Desktop\Charts.pdf') as export_pdf:
-    fig1 = plt.figure('Percent editing eficiency')
-    pie_editing_efficiency = plt.pie([float(wt_reads), float(editing_efficiency)], labels=['wt_reads', 'mutated_reads'], colors=['darkred', 'r'], startangle=90, autopct='%.1f%%')
-    plt.title('Percent editing efficiency')
-    export_pdf.savefig(fig1)
+    fig = plt.figure()
+    fig, (fig1, fig2, fig3) = plt.subplots(3)
+    fig1.pie([float(wt_reads), float(editing_efficiency)], labels=['wt_reads', 'mutated_reads'], colors=['darkred', 'r'], startangle=90, autopct='%.1f%%')
+    fig1.set_title('Percent editing efficiency')
+   
     
     # Calculating number of reads with insertions
     insertions = sum(data[data['Type']== 'Insertion']['Count'])
     percent_insertions = insertions/mutated_reads*100
-    fig2 = plt.figure('Percent insertions from modified reads')
-    pie_insertions = plt.pie([float(100 - percent_insertions), float(percent_insertions)], labels=['Others', 'Insertions'], colors=['b', 'c'], startangle=90, autopct='%.1f%%')
-    plt.title('Percent insertions from modified reads')
-    export_pdf.savefig(fig2)
+
+    fig2.pie([float(100 - percent_insertions), float(percent_insertions)], labels=['Others', 'Insertions'], colors=['b', 'c'], startangle=90, autopct='%.1f%%')
+    fig2.set_title('Percent insertions from modified reads')
+   
     
     # Calculating number of reads with deletions
     deletions = sum(data[data['Type']== 'Deletion']['Count'])
     percent_deletions = deletions/mutated_reads*100
-    fig3 = plt.figure('Percent deletions from modified reads')
-    plt.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
-    plt.title('Percent deletions from modified reads')
-    export_pdf.savefig(fig3)
+   
+    fig3.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], colors=['g', 'y'], startangle=90, autopct='%.1f%%')
+    fig3.set_title('Percent deletions from modified reads')
+    export_pdf.savefig(fig)
     plt.show()
     plt.close()
     
