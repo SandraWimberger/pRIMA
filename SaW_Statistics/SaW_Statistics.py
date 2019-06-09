@@ -19,13 +19,13 @@ mutated_reads = int(data[['Count']].sum())
 print (mutated_reads)
 
 while mutated_reads >= mapped_reads:
-    print ('Number of mapped reads was to low')
+    print ('Number of mapped reads is lower than number of mutated reads! Try again.')
     mapped_reads = int(input("How many reads have been mapped? "))
     if mutated_reads <= mapped_reads:
-        print('Now ok')
+        print('Number of mapped reads is bigger than number of mutated reads')
         break
 else:
-    print('correct number')
+    print('Number of mapped reads is bigger than number of mutated reads')
     
     
 
@@ -75,7 +75,7 @@ with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
     plt.show()
     plt.close()
  
-print ('Pie charts are safed')
+print ('Pie plots are safed')
   
     
    
