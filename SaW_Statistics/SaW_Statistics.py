@@ -12,7 +12,7 @@ for i in range(10):
 
 print (data)
 #Type in the number of mapped reads from your tsv file
-mapped_reads = 50000
+mapped_reads = int(input("How many reads have been mapped? "))
 
 # Calculate number of mutated reads
 mutated_reads = data[['Count']].sum()
@@ -65,7 +65,7 @@ with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
     plt.show()
     plt.close()
     
-    
+  
     
    
 
