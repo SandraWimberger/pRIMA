@@ -29,10 +29,14 @@ wt_reads = (100 - editing_efficiency)
 print (editing_efficiency) 
 print (wt_reads)
 
+#ask where pdf file should be safed
+
+Output_location = input("Where would you like to save this data? ")
+
 ### Generating pie charts for editing efficiency
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
-with PdfPages(r'C:\Users\kwcb136\Desktop\Charts.pdf') as export_pdf:
+with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
     fig = plt.figure()
     fig, (fig1, fig2, fig3) = plt.subplots(3,1)
     
