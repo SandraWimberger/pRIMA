@@ -15,11 +15,21 @@ print (data)
 mapped_reads = int(input("How many reads have been mapped? "))
 
 # Calculate number of mutated reads
-mutated_reads = data[['Count']].sum()
+mutated_reads = int(data[['Count']].sum())
 print (mutated_reads)
 
-# Create a new column in the in data frame, calculating relative frequencies
+while mutated_reads >= mapped_reads:
+    print ('Number of mapped reads was to low')
+    mapped_reads = int(input("How many reads have been mapped? "))
+    if mutated_reads <= mapped_reads:
+        print('Now ok')
+        break
+else:
+    print('correct number')
+    
+    
 
+# Create a new column in the in data frame, calculating relative frequencies
 data['rel_freq'] = 100*data['Count']/mapped_reads
 print (data)
 
@@ -64,7 +74,8 @@ with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
     export_pdf.savefig(fig)
     plt.show()
     plt.close()
-    
+ 
+print ('Pie charts are safed')
   
     
    
