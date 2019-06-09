@@ -27,7 +27,6 @@ while mutated_reads >= mapped_reads:
 else:
     print('Number of mapped reads is bigger than number of mutated reads')
     
-    
 
 # Create a new column in the in data frame, calculating relative frequencies
 data['rel_freq'] = 100*data['Count']/mapped_reads
