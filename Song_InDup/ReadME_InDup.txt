@@ -1,8 +1,15 @@
-Creating a new columne named "Duplication"
-Checking the sequence in columne "Allele"
-if it's "-", add "" in columne "Duplication"
-if it's a sequence, matching it to the sequence left to it
-    if match, add "Detected" in columne "Duplication"
-    if not match, match it to the seqeuence right to it
-    if match, add "Detected" in columne "Duplication"
-    if not match, add "" in columne "Duplication"
+#type in reference sequence
+#type in gRNA sequence
+
+#import file"RIMA.csv"
+#import pandas library
+#create a new columne named"Duplication1"
+#check values in columne "Allele" from the first row to the last row by order
+    if it's not "-", if the value in columne "Type" in the same row is "Insertion", do the following steps:
+        check if the value in columne "Allele" is a direct repeat sequence or nucleotide to the sequence left to it or right to it.
+            if yes, add value "Duplication" in columne "Duplication1", otherwise skip
+    if the value in columne "Allele" is "-", then skip it.
+
+#Export the modified data as new csv file "RIMA_Duplication.csv"
+    
+    
