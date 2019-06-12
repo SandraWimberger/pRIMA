@@ -1,4 +1,4 @@
-Reference Position;Type;Length;Reference;Allele;Count
+	Reference Position;Type;Length;Reference;Allele;Count
 1;SNV;1;T;A;404
 51;SNV;1;G;A;138
 68;Deletion;67;GTCCAGAGGAACGAATGATCAGGGAGAAACTGAAGGCAACCTGTATGCCAGCCTGGAAGCACGAATG;-;119

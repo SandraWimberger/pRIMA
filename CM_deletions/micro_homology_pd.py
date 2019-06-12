@@ -11,28 +11,24 @@ def micro_homo_pd(dataframe, refseq):
     dataframe = dataframe.assign(DelCount=None) #Creates a new column and assigns it as None
     with open(refseq) as ref_seq_READ: #open reference sequence
         ref_seq=ref_seq_READ.read()
-        print(ref_seq)
+        #print(ref_seq)
 
-    deletions = dataframe.loc[dataframe.loc[:, 'Type'] == "Deletion", ['Reference Position','Reference', 'DelCount']] #extracts reference position and reference seq for all positions called as deletion
-    print(deletions)
-    for idx, ref_pos in enumerate(deletions.loc[:,"Reference Position"]):
+    #deletions = dataframe.loc[dataframe.loc[:, 'Type'] == "Deletion", ['Reference Position','Reference', 'DelCount']] #extracts reference position and reference seq for all positions called as deletion
+    #print(dataframe.iloc[0, :])
+    for idx, ref_pos in enumerate(dataframe.iloc[:, 0]):
         #print(ref_pos)
         #print(type(ref_pos))
-
-        if len(deletions.iloc[idx, 1]) <= 1:
-            deletions.iloc[idx, 2] = None
-        else:
+        if dataframe.iloc[idx, 1] == "Deletion" and dataframe.iloc[idx, 2] > 1:
             count = 0
-            for i, char in enumerate(deletions.iloc[idx, 1]):
-                print(char)
+            for i, char in enumerate(dataframe.iloc[idx, 3]):
+                #print(char)
                 #print(deletions.iloc[idx, 1])
 
-                if char == ref_seq[ref_pos+len(deletions.iloc[idx, 1])-1+i]:
+                if char == ref_seq[ref_pos+dataframe.iloc[idx, 2]-1+i]:
                     count += 1
                 else:
                     break
-            print(ref_seq)
-            print(deletions.iloc[idx, 1])
-            deletions.iloc[idx, 2] = count
-             #   if char == ref_seq
-    print(deletions)
+            dataframe.iloc[idx, 6] = count
+        else:
+            pass
+    return(dataframe)
