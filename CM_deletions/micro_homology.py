@@ -7,12 +7,14 @@ Checks if a deletion is because a micro homology and exports a list with true or
 
 
 def micro_homo(data, refseq):
-    # if refseq.endswith('.fasta'):
-    #     from Bio import SeqIO
-    #     fasta_sequences = SeqIO.parse(open(refseq), 'fasta')
-    #         for fasta in fasta_sequences:
-    #             name, sequence = fasta.id, str(fasta.seq)
-    #     with open(output_file) as out_file:
+    #checks if the ingoing reference sequence is a fasta file and parses it
+    if refseq.endswith('.fasta'):
+        from Bio import SeqIO
+        ref_seq = SeqIO.parse(open(refseq), 'fasta')
+        for fasta in ref_seq:
+            name, sequence = fasta.id, str(fasta.seq)
+    else:
+        pass
 
     with open(refseq) as ref_seq_READ: #open reference sequence
         ref_seq=ref_seq_READ.read()
