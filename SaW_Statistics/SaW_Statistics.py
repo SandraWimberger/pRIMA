@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 import pandas as pd #Load the Pandas libraries with alias 'pd' 
 data = pd.read_csv('test_data_statistics.csv') # Read data from file 'filename.csv' [‎2019-‎05-‎29 09:21]  Taheri-Ghahfarokhi, Amir:  
 for i in range(10):
@@ -81,8 +80,3 @@ print ('Pie plots are safed')
     
    
 
-
-    
-    
-    
->>>>>>> SaW_Statistics
