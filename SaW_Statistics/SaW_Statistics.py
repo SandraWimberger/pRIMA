@@ -1,4 +1,6 @@
-
+'''
+Basic statistic analysis of CRISPR-Cas9 edited target-sites
+'''
 import pandas as pd #Load the Pandas libraries with alias 'pd' 
 data = pd.read_csv('test_data_statistics.csv') # Read data from file 'filename.csv' [‎2019-‎05-‎29 09:21]  Taheri-Ghahfarokhi, Amir:  
 for i in range(10):
@@ -11,7 +13,7 @@ for i in range(10):
     row= var_type + " " + str(var_len) + " " + allele
     print(row) 
 
-print (data)
+print (data) 
 #Type in the number of mapped reads from your tsv file
 mapped_reads = int(input("How many reads have been mapped? "))
 
