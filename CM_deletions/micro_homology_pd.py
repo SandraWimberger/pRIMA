@@ -8,7 +8,7 @@ Uses a "dataframe" format created by the pandas package
 """
 
 def micro_homo_pd(dataframe, refseq):
-    dataframe = dataframe.assign(DelCount=None) #Creates a new column and assigns it as None
+    dataframe = dataframe.assign(MHLength=None) #Creates a new column and assigns it as None
     with open(refseq) as ref_seq_READ: #open reference sequence
         ref_seq=ref_seq_READ.read()
         #print(ref_seq)
