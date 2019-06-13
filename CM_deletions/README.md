@@ -1,4 +1,4 @@
-#Calling micro homology dependent deletions
+## Calling micro homology dependent deletions
 If the initial bases of a deletion is identical to the bases immidiately after 
 the deleted seqeunce the deletion is micro homology dependent. 
 
@@ -15,6 +15,6 @@ The "micro_homology_pd.py" uses the pandas package to convert the csv to a dataf
 This is in line with the data format used in the rest of this project.
 
 Both versions will give a csv as output with a new column with the length of the micro homology.
-##Input
+## Input
 "deletions_main" will take a .csv file located in the same directiory as input.
-##Output
+## utput
