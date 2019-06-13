@@ -10,7 +10,6 @@ from micro_homology_pd import micro_homo_pd
 
 data = micro_homo_pd(test_data, "REF_SEQ.txt")
 print(data)
-
 from csv_csv_pandas.csv_writer_pd import csv_writer_pd
 
 test_data = csv_writer_pd(data, 'test_data_MH.csv')
