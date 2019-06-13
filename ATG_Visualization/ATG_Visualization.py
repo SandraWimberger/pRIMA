@@ -320,3 +320,5 @@ if show_window==False:
     window.destroy()
 else:
     window.mainloop()
+
+print("It's done!")
