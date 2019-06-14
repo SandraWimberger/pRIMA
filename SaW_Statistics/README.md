@@ -26,8 +26,8 @@ Pandas library is used for dataframe
 |	118	|	Deletion	|	16	|	GCCTGGAAGCACGAAT	|	-	|	375	|	0	|		|	2.01786483	|
 
 Relative frequency is calculated in the code
-
-'import pandas as pd #Load the Pandas libraries with alias 'pd' 
+```
+import pandas as pd #Load the Pandas libraries with alias 'pd' 
 data = pd.read_csv('test_data_statistics.csv') # Read data from file 'filename.csv' [‎2019-‎05-‎29 09:21]  Taheri-Ghahfarokhi, Amir:  
 for i in range(10):
     var_type=data.loc[i,'Type']
@@ -40,11 +40,11 @@ for i in range(10):
     print(row)' 
 
 print (data)
-'''
+´´´
 2. The user will be asked to proved the number of mapped reads. For testing the code any integer can be provided. 
 The stastitically calculation will only be performed if the number of mapped reads exceed the number of mutated reads. 
-
-'mapped_reads = int(input("How many reads have been mapped? "))
+```
+mapped_reads = int(input("How many reads have been mapped? "))
 
 mutated_reads = int(data[['Count']].sum())
 print (mutated_reads)
@@ -58,6 +58,6 @@ while mutated_reads >= mapped_reads:
         break
 else:
     print('Number of mapped reads is bigger than number of mutated reads')'
-
+´´´
 
 ##Output
