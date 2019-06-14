@@ -1,13 +1,16 @@
 # Statistically analysis of the Cas9 targeted-sites
 ## Running the code will calculate the percentage of editing efficiency from mapped reads and percentage of insertions mutated reads. Graphical representation in Pie-charts. 
 
-The code use the variant table as an input file to calcuate different parametes of a Cas9-targeting experiment. 
-A test file is provided in the folder ("test_dataset_statistics.csv"). The table is based on NGS variants plus two additional columns (dublications and microhomologies)
+The code uses the variant table as an input file to calcuate different parameters of a Cas9-targeting experiment. 
+
+A test file is provided in the folder ("test_dataset_statistics.csv"). 
+
+The table is based on NGS variants plus two additional columns (dublications and microhomologies).
+
 Additionally the user needs to provide a the number of mapped reads which can be extracted from the tsv file. 
 
 # How to run the code
 ## Input
-Pandas library is used for dataframe
 
 1. Table of variant in **.csv** format.
 
@@ -25,7 +28,8 @@ Pandas library is used for dataframe
 |	133	|	Deletion	|	4	|	TGGT	|	-	|	421	|	3	|		|	2.265389582	|
 |	118	|	Deletion	|	16	|	GCCTGGAAGCACGAAT	|	-	|	375	|	0	|		|	2.01786483	|
 
-Relative frequency is calculated in the code
+Relative frequency is calculated in the code.
+
 ```
 import pandas as pd #Load the Pandas libraries with alias 'pd' 
 data = pd.read_csv('test_data_statistics.csv') # Read data from file 'filename.csv' [‎2019-‎05-‎29 09:21]  Taheri-Ghahfarokhi, Amir:  
@@ -41,7 +45,10 @@ for i in range(10):
 
 print (data)
 ```
-2. The user will be asked to proved the number of mapped reads. For testing the code any integer can be provided. 
+2. The user will be asked to provide the number of mapped reads. 
+
+For testing the code any integer can be provided. 
+
 The stastitically calculation will only be performed if the number of mapped reads exceed the number of mutated reads. 
 ```
 mapped_reads = int(input("How many reads have been mapped? "))
@@ -62,10 +69,13 @@ else:
 
 ## Output
 In a last step the code will calculate editing efficiency and percentage of deletions and instertions in fraction of modified reads. 
+
 Pie plots are used to graphically represent the data. 
-Therefore matplotlib library needs to be installed.
+
 A pdf file will be generated containing the pie plots. 
+
 The user provides the file path to store the graphs in the following format:  
+
 C:\Users\Name\Documents
 ```
 data['rel_freq'] = 100*data['Count']/mapped_reads
@@ -118,9 +128,11 @@ print ('Pie plots are saved')
 
 # Requirement
 Pandas
+
 Matplotlib
 
 # Author
 Sandra Wimberger
+
 email to :
 Sandra.Wimberger@gu.se
