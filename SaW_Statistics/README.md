@@ -114,4 +114,13 @@ with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
  
 print ('Pie plots are saved')
 ```
+[Exapmle pdf!](https://github.com/SandraWimberger/pRIMA/blob/master/SaW_Statistics/pie_plots.pdf)
 
+# Requirement
+Pandas
+Matplotlib
+
+# Author
+Sandra Wimberger
+email to :
+Sandra.Wimberger@gu.se
