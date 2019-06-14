@@ -60,4 +60,58 @@ else:
     print('Number of mapped reads is bigger than number of mutated reads')'
 ```
 
-##Output
+## Output
+In a last step the code will calculate editing efficiency and percentage of deletions and instertions in fraction of modified reads. 
+Pie plots are used to graphically represent the data. 
+Therefore matplotlib library needs to be installed.
+A pdf file will be generated containing the pie plots. 
+The user provides the file path to store the graphs in the following format:  
+C:\Users\Name\Documents
+```
+data['rel_freq'] = 100*data['Count']/mapped_reads
+print (data)
+
+# Calculating editing efficiency
+editing_efficiency = mutated_reads/mapped_reads*100
+wt_reads = (100 - editing_efficiency)
+
+#Ask where pdf file should be saved. User provides the file path.
+
+Output_location = input("Where would you like to save this data? ")
+
+### Generating pie charts for editing efficiency using matplotlib library.
+import matplotlib.pyplot as plt
+# Use backend from matplotlib to safe the generate charts in a pdf.
+from matplotlib.backends.backend_pdf import PdfPages
+with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
+    fig = plt.figure()
+    fig, (fig1, fig2, fig3) = plt.subplots(3,1)
+    
+    fig1.pie([float(wt_reads), float(editing_efficiency)], labels=['wt_reads', 'mutated_reads'], pctdistance=0.5, colors=['darkred', 'r'], startangle=90, radius = 1.3, autopct='%.1f%%')
+    fig1.set_title('Percent editing efficiency', fontsize=11, pad = 3)
+    fig1.axis('equal')
+    
+    
+    # Calculating number of reads with insertions
+    insertions = sum(data[data['Type']== 'Insertion']['Count'])
+    percent_insertions = insertions/mutated_reads*100
+    fig2.pie([float(100 - percent_insertions), float(percent_insertions)], labels=['Others', 'Insertions'], pctdistance=0.5, colors=['b', 'c'], startangle=90, radius = 1.3, autopct='%.1f%%')
+    fig2.set_title('Percent insertions from modified reads', fontsize=11, pad = 3)
+    fig2.axis('equal') 
+    
+    
+    # Calculating number of reads with deletions
+    deletions = sum(data[data['Type']== 'Deletion']['Count'])
+    percent_deletions = deletions/mutated_reads*100
+    fig3.pie([float(100 - percent_deletions), float(percent_insertions)], labels=['Others', 'Deletions'], pctdistance=0.5, colors=['g', 'y'], startangle=90, radius = 1.3, autopct='%.1f%%')
+    fig3.set_title('Percent deletions from modified reads', fontsize=11, pad = 3)
+    fig3.axis('equal') 
+    
+    fig.tight_layout()
+    export_pdf.savefig(fig)
+    plt.show()
+    plt.close()
+ 
+print ('Pie plots are saved')
+```
+
