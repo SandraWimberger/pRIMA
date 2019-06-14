@@ -40,7 +40,7 @@ for i in range(10):
     print(row)' 
 
 print (data)
-´´´
+```
 2. The user will be asked to proved the number of mapped reads. For testing the code any integer can be provided. 
 The stastitically calculation will only be performed if the number of mapped reads exceed the number of mutated reads. 
 ```
@@ -58,6 +58,6 @@ while mutated_reads >= mapped_reads:
         break
 else:
     print('Number of mapped reads is bigger than number of mutated reads')'
-´´´
+```
 
 ##Output
