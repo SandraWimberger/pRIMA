@@ -1,2 +1,3 @@
 # pRIMA
-Analysing mutation pattern of Cas9-targeted sites
+##Statistically analysis of the Cas9 targeted-sites
+
