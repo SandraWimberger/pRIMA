@@ -21,6 +21,7 @@ mapped_reads = int(input("How many reads have been mapped? "))
 mutated_reads = int(data[['Count']].sum())
 print (mutated_reads)
 
+# while loop to check the number of mapped reads is correct. Number of mapped reads needs to exceed number of mutated reads
 while mutated_reads >= mapped_reads:
     print ('Number of mapped reads is lower than number of mutated reads! Try again.')
     mapped_reads = int(input("How many reads have been mapped? "))
@@ -38,15 +39,14 @@ print (data)
 # Calculating editing efficiency
 editing_efficiency = mutated_reads/mapped_reads*100
 wt_reads = (100 - editing_efficiency)
-print (editing_efficiency) 
-print (wt_reads)
 
-#ask where pdf file should be safed
+#Ask where pdf file should be saved. User provides the file path.
 
 Output_location = input("Where would you like to save this data? ")
 
-### Generating pie charts for editing efficiency
+### Generating pie charts for editing efficiency using matplotlib library.
 import matplotlib.pyplot as plt
+# Use backend from matplotlib to safe the generate charts in a pdf.
 from matplotlib.backends.backend_pdf import PdfPages
 with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
     fig = plt.figure()
@@ -77,7 +77,7 @@ with PdfPages((Output_location) + '\pie_plots.pdf') as export_pdf:
     plt.show()
     plt.close()
  
-print ('Pie plots are safed')
+print ('Pie plots are saved')
   
     
    
