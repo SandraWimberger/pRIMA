@@ -14,7 +14,7 @@ test_data = csv_parser('test_dataset.csv')
 
 from CM_deletions.micro_homology import micro_homo
 
-deletions_count = micro_homo(test_data, 'REF_SEQ')
+deletions_count = micro_homo(test_data, "REF_SEQ.txt")
 
 print(deletions_count)
 
